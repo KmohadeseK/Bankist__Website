@@ -1,4 +1,4 @@
-▎Bankist Project
+# ▎Bankist Website Project🌱👩‍⚖️
 
 Welcome to the Bankist project! This repository is dedicated to creating a dynamic and interactive banking website that showcases various important JavaScript effects and features. The primary goal of this project is to implement and demonstrate various UI components and animations using JavaScript.
 
@@ -56,3 +56,11 @@ Explore the different features implemented in this project:
       `git push origin feature/AmazingFeature`
    
 5. Open a pull request.
+
+▎Contributing
+
+If you would like to contribute to this project, feel free to fork the repository and submit a pull request with your changes. Any improvements or new features are welcome!
+
+▎Acknowledgments
+
+Thank you for checking out the Bankist project! We hope you enjoy using it and find it helpful for understanding basic banking functionalities. If you have any questions or feedback, feel free to reach out!
