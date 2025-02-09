@@ -50,7 +50,6 @@ document.addEventListener('keydown', function (e) {
 });
 
 /////////////////////////////////////////////////////
-
 //* ................ Scroll function .................
 // btn scrolling
 btnScrollTo.addEventListener('click', function (e) {
@@ -85,7 +84,7 @@ tabsContainer.addEventListener('click', (e) => {
     'operations__tab--active'))
   tabsContent.forEach(c => c.classList.remove(
     'operations__content--active'
-  ))
+  ));
 
   // Active tab
   clicked.classList.add('operations__tab--active');
@@ -93,7 +92,7 @@ tabsContainer.addEventListener('click', (e) => {
   // Activate content area
   document.querySelector(`.operations__content--${clicked.
     dataset.tab}`)
-    .classList.add('operations__content--active')
+    .classList.add('operations__content--active');
 
 });
 
@@ -103,9 +102,9 @@ const handelHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const sinlings = link.closest('.nav')
-      .querySelectorAll('.nav__link')
+      .querySelectorAll('.nav__link');
     const logo = link.closest('.nav')
-      .querySelector('img')
+      .querySelector('img');
 
     sinlings.forEach(el => {
       if (el !== link) {
@@ -113,8 +112,8 @@ const handelHover = function (e) {
       }
     });
     logo.style.opacity = this;
-  }
-}
+  };
+};
 // passing "argument" into handler
 nav.addEventListener('mouseover',
   handelHover.bind(0.5));
@@ -133,7 +132,7 @@ const stickyNav = (entries) => {
     nav.classList.add('sticky');
   else
     nav.classList.remove('sticky');
-}
+};
 
 const headerObserver = new IntersectionObserver(
   stickyNav, {
@@ -142,8 +141,7 @@ const headerObserver = new IntersectionObserver(
   rootMargin: `-${navHeight}px`
 });
 
-headerObserver.observe(header)
-
+headerObserver.observe(header);
 
 //* ................ Reveal sections .................
 
@@ -278,276 +276,3 @@ const slider = function () {
 
 };
 slider();
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////
-//=======================================
-// LECTURE
-//=======================================
-/////////////////////////////////////////
-
-//! Selection Elements
-// console.log(document.documentElement);
-// console.log(document.head);
-// console.log(document.body);
-
-// const header = document.querySelector('.header');
-// const allSection = document.querySelectorAll('.section')
-
-// const allButtons = document.getElementsByTagName('button')
-// console.log(allButtons);
-
-// console.log(document.getElementsByClassName('btn'));
-
-//! Creating and inserting elements
-
-// const message = document.createElement('div');
-// message.classList.add('cookie-message');
-// message.innerHTML =
-//   `We use cookied for improved fanctionality and analytics.
-//    <button class="btn btn--close-cookie">Got it!</button>`;
-
-// // header.prepend(message)
-// header.append(message)
-//! copy element message👇👇
-// // header.append(message.cloneNode(true))
-
-// // header.before(message)
-// // header.after(message)
-
-//! Delete elements
-// document.querySelector('.btn--close-cookie')
-//   .addEventListener('click', function () {
-//     message.remove()
-//     //* Old remove() version👇
-//     // message.parentElement.removeChild(message)
-//   }
-//   );
-
-
-//! Styles
-// message.style.backgroundColor = '#37383d';
-// message.style.width = '120%'
-
-// console.log(message.style.backgroundColor); // OUTPUT: rgb(55, 56, 61)
-// console.log(message.style.height); // <empty string>
-
-// console.log(getComputedStyle(message).height);
-
-// Number.parseFloat(message.style.height =
-//   (getComputedStyle(message).height, 10) + 60 + 'px');
-// console.log(message.style.height);
-
-
-//! set color property
-// document.documentElement.style
-//   .setProperty('--color-primary', 'lightblue')
-
-//! Atrributes
-// const logo = document.querySelector('.nav__logo');
-// console.log(logo.src);
-// console.log(logo.alt);
-// console.log(logo.className);
-
-// // set alt logo
-// logo.alt = 'beautiful minimalist logo';
-
-//! Non-Standard
-// console.log(logo.designer); // undefined 
-
-//! GET & SET Atrributes
-// console.log(logo.getAttribute('designer'));
-// logo.setAttribute('company', 'Bankist') // company='Bankist'
-// console.log(logo.getAttribute('src')); // img/logo.png
-
-
-// const link = document.querySelector('.nav__link--btn');
-// console.log(link.href);
-// console.log(link.getAttribute('href'));
-
-//! Data Attributes
-// console.log(logo.dataset.versionNumber);
-
-//! Classes
-// logo.classList.add('c', 'd')
-// logo.classList.remove('c', 'd')
-// logo.classList.toggle('c')
-
-// console.log(
-//   logo.classList.contains('c')  // not includes
-// );
-
-//! don't use❌
-// logo.className = 'momo';
-
-// Select elements
-// const btnScrollTo = document.querySelector('.btn--scroll-to');
-// const section1 = document.querySelector('#section--1');
-
-// btnScrollTo.addEventListener('click', function (e) {
-//   const sec1Coords = section1.getBoundingClientRect()
-//   console.log(sec1Coords);
-
-//   console.log(e.target.getBoundingClientRect());
-
-//   console.log('Current Scroll', window.pageXOffset,
-//     window.pageYOffset);
-
-//   console.log(
-//     'hight/width viewport',
-//     document.documentElement.clientWidth,
-//     document.documentElement.clientHeight
-//   );
-
-//   // Scrolling
-//   // window.scrollTo(
-//   //   sec1Coords.left + window.pageXOffset,
-//   //   sec1Coords.top + window.pageYOffset
-//   // )
-
-//   //! Old selotion Scroll
-//   // window.scrollTo({
-//   //   left: sec1Coords.left + window.pageXOffset,
-//   //   top: sec1Coords.top + window.pageYOffset,
-//   //   behavior: 'smooth'
-//   // });
-
-//   //? Modern selosion Scroll
-//   section1.scrollIntoView({ behavior: 'smooth' });
-
-// });
-
-//! 
-
-// const alertH1 = function () {
-//   alert('addEventListener: Great! you are reading the heading :D');
-
-//* ................ Alert heading .................
-// //! remove eventListener 
-//   //   h1.removeEventListener('mouseenter',alertH1);
-// }
-// h1.addEventListener('mouseenter', alertH1);
-
-// setTimeout(() => h1.removeEventListener('mouseenter',
-//  alertH1), 7000)
-
-// h1.onmouseenter = function () {
-//   alert('onmouseenter: Great! you are reading the heading :D')
-// }
-
-//! Capturing and Bubbling DOM propagation
-
-// rgb(255,255,255)
-// const randomInt = (min, max) =>
-//   Math.floor(Math.random() * (max - min + 1) + min);
-
-// const randomColor = () =>
-//   `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
-
-// console.log(randomColor());
-
-// document.querySelector('.nav__link')
-//   .addEventListener('click', function (e) {
-//     this.style.backgroundColor = randomColor();
-//     console.log('LINK', e.target, e.currentTarget);
-//     console.log(e.currentTarget === this);
-
-//     // Stop propagation
-//     // e.stopPropagation()
-
-//   });
-
-// document.querySelector('.nav__links')
-//   .addEventListener('click', function (e) {
-//     this.style.backgroundColor = randomColor();
-//     console.log('CONTAINER', e.target, e.currentTarget);
-
-//   });
-
-// document.querySelector('.nav')
-//   .addEventListener('click', function (e) {
-//     this.style.backgroundColor = randomColor();
-//     console.log('NAV', e.target, e.currentTarget);
-//   });
-
-
-//! Going downWards: child
-// console.log(h1.querySelectorAll('.highlight'));
-// console.log(h1.childNodes);
-// console.log(h1.children);
-// h1.firstElementChild.style.color = 'white';
-// h1.lastElementChild.style.color = 'blue';
-
-//! Going upWards: parents
-// console.log(h1.parentNode);
-// console.log(h1.parentElement);
-
-// h1.closest('.header').style.background = 'var(--gradient-secondary)';
-// h1.closest('h1').style.background = 'var(--gradient-primary)';
-
-//! Going sibWays: siblings
-// console.log(h1.previousElementSibling); // null
-// console.log(h1.nextElementSibling); // h4
-
-//! for Nodes
-// console.log(h1.previousSibling);
-// console.log(h1.nextSibling);
-
-// console.log(h1.parentElement.children);
-// [...h1.parentElement.children].forEach(function (ele) {
-//   if (ele !== h1) ele.style.fontSize = '10px'
-// })
-
-//! Sticky navigation 
-// const initialCoords = section1.getBoundingClientRect();
-
-// window.addEventListener('scroll', function (e) {
-//   if (window.scrollY > initialCoords.top)
-//     nav.classList.add('sticky');
-//   else
-//     nav.classList.remove('sticky');
-// });
-
-//! Sticky navigation: Intersection Observer API
-// const obsCallback = function (entries, observer) {
-// entries => ها به ما میدهدthreshold یک آرایه از
-//   entries.forEach(entry => {
-//     console.log(entry);
-
-//   });
-// }
-
-// const obsOptions = {
-//   root: null, // view port
-//   threshold: [0, 0.2]  // number%
-// }
-
-// const observer = new IntersectionObserver(
-//   obsCallback, obsOptions);
-// observer.observe(section1);
-
-//! Lifecycle DOM Events
-// document.addEventListener('DOMContentLoaded', function
-//   (e) {
-//   console.log('hello domiii', e);
-// })
-
-// window.addEventListener('load', function (e) {
-//   console.log(`page fully loaded`, e);
-// });
-
-// window.addEventListener('beforeunload', function (e) {
-//   e.preventDefault();
-//   e.returnValue = '';
-// });
-
