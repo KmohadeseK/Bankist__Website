@@ -17,6 +17,7 @@ const nav = document.querySelector('.nav')
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
+const imgTargets = document.querySelectorAll('img[data-src]');
 const slides = document.querySelectorAll('.slide');
 const sliderContainer = document.querySelector('.slider');
 const btnLeft = document.querySelector('.slider__btn--left');
@@ -168,8 +169,6 @@ allSections.forEach(section => {
 
 //* ................ Lazy loading Images .................
 
-const imgTargets = document.querySelectorAll('img[data-src]')
-
 const loadImage = function (entries, observer) {
   const [entry] = entries;
 
@@ -181,7 +180,6 @@ const loadImage = function (entries, observer) {
   // loading images
   entry.target.addEventListener('load', function (e) {
     entry.target.classList.remove('lazy-img')
-
   });
 
   observer.unobserve(entry.target)
@@ -244,7 +242,6 @@ const slider = function () {
     // go to slide callBack function 
     goToSlide(curSlide);
     activateDot(curSlide);
-
   };
 
   const init = function () {
@@ -254,7 +251,7 @@ const slider = function () {
   };
   init();
 
-  //............... Event handlers .................
+  //======== Event handlers =========
   // addEventListener : Right button 
   btnRight.addEventListener('click', nextSlide);
   // addEventListener : Left button 
